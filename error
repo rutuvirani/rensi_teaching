@@ -1,28 +1,20 @@
-ros2 run ply_to_rviz ply_to_rviz --ros-args -p file_path:=/home/virani/Downloads/downloaded_graph/downloaded_graph/map.ply
-[INFO] [1734527284.303910227] [ply_to_rviz_publisher]: Loading .ply file: /home/virani/Downloads/downloaded_graph/downloaded_graph/map.ply
-[INFO] [1734527284.558073076] [ply_to_rviz_publisher]: Loaded 330658 points from /home/virani/Downloads/downloaded_graph/downloaded_graph/map.ply
+ ros2 run graphnav_visualization_py graphnav_map_visualizer
 Traceback (most recent call last):
-  File "/home/virani/learn_ros_ws/install/ply_to_rviz/lib/ply_to_rviz/ply_to_rviz", line 33, in <module>
-    sys.exit(load_entry_point('ply-to-rviz', 'console_scripts', 'ply_to_rviz')())
-  File "/home/virani/learn_ros_ws/build/ply_to_rviz/ply_to_rviz/ply_to_rviz_node.py", line 67, in main
-    rclpy.spin(node)
-  File "/opt/ros/humble/local/lib/python3.10/dist-packages/rclpy/__init__.py", line 222, in spin
-    executor.spin_once()
-  File "/opt/ros/humble/local/lib/python3.10/dist-packages/rclpy/executors.py", line 739, in spin_once
-    self._spin_once_impl(timeout_sec)
-  File "/opt/ros/humble/local/lib/python3.10/dist-packages/rclpy/executors.py", line 736, in _spin_once_impl
-    raise handler.exception()
-  File "/opt/ros/humble/local/lib/python3.10/dist-packages/rclpy/task.py", line 239, in __call__
-    self._handler.send(None)
-  File "/opt/ros/humble/local/lib/python3.10/dist-packages/rclpy/executors.py", line 437, in handler
-    await call_coroutine(entity, arg)
-  File "/opt/ros/humble/local/lib/python3.10/dist-packages/rclpy/executors.py", line 351, in _execute_timer
-    await await_or_execute(tmr.callback)
-  File "/opt/ros/humble/local/lib/python3.10/dist-packages/rclpy/executors.py", line 107, in await_or_execute
-    return callback(*args)
-  File "/home/virani/learn_ros_ws/build/ply_to_rviz/ply_to_rviz/ply_to_rviz_node.py", line 59, in publish_point_cloud
-    point_cloud_msg = self.create_pointcloud2(self.points)
-  File "/home/virani/learn_ros_ws/build/ply_to_rviz/ply_to_rviz/ply_to_rviz_node.py", line 32, in create_pointcloud2
-    header.frame_id = 'map'  # Set your frame_id
-AttributeError: 'Time' object has no attribute 'frame_id'
+  File "/home/virani/learn_ros_ws/install/graphnav_visualization_py/lib/graphnav_visualization_py/graphnav_map_visualizer", line 33, in <module>
+    sys.exit(load_entry_point('graphnav-visualization-py', 'console_scripts', 'graphnav_map_visualizer')())
+  File "/home/virani/learn_ros_ws/install/graphnav_visualization_py/lib/graphnav_visualization_py/graphnav_map_visualizer", line 25, in importlib_load_entry_point
+    return next(matches).load()
+  File "/usr/lib/python3.10/importlib/metadata/__init__.py", line 171, in load
+    module = import_module(match.group('module'))
+  File "/usr/lib/python3.10/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1050, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1006, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 688, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 883, in exec_module
+  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+  File "/home/virani/learn_ros_ws/build/graphnav_visualization_py/graphnav_visualization_py/graphnav_map_visualizer.py", line 7, in <module>
+    from bosdyn.api.graph_nav import Graph
+ImportError: cannot import name 'Graph' from 'bosdyn.api.graph_nav' (/usr/local/lib/python3.10/dist-packages/bosdyn/api/graph_nav/__init__.py)
 [ros2run]: Process exited with failure 1
