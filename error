@@ -1,0 +1,28 @@
+ros2 run ply_to_rviz ply_to_rviz --ros-args -p file_path:=/home/virani/Downloads/downloaded_graph/downloaded_graph/map.ply
+[INFO] [1734527284.303910227] [ply_to_rviz_publisher]: Loading .ply file: /home/virani/Downloads/downloaded_graph/downloaded_graph/map.ply
+[INFO] [1734527284.558073076] [ply_to_rviz_publisher]: Loaded 330658 points from /home/virani/Downloads/downloaded_graph/downloaded_graph/map.ply
+Traceback (most recent call last):
+  File "/home/virani/learn_ros_ws/install/ply_to_rviz/lib/ply_to_rviz/ply_to_rviz", line 33, in <module>
+    sys.exit(load_entry_point('ply-to-rviz', 'console_scripts', 'ply_to_rviz')())
+  File "/home/virani/learn_ros_ws/build/ply_to_rviz/ply_to_rviz/ply_to_rviz_node.py", line 67, in main
+    rclpy.spin(node)
+  File "/opt/ros/humble/local/lib/python3.10/dist-packages/rclpy/__init__.py", line 222, in spin
+    executor.spin_once()
+  File "/opt/ros/humble/local/lib/python3.10/dist-packages/rclpy/executors.py", line 739, in spin_once
+    self._spin_once_impl(timeout_sec)
+  File "/opt/ros/humble/local/lib/python3.10/dist-packages/rclpy/executors.py", line 736, in _spin_once_impl
+    raise handler.exception()
+  File "/opt/ros/humble/local/lib/python3.10/dist-packages/rclpy/task.py", line 239, in __call__
+    self._handler.send(None)
+  File "/opt/ros/humble/local/lib/python3.10/dist-packages/rclpy/executors.py", line 437, in handler
+    await call_coroutine(entity, arg)
+  File "/opt/ros/humble/local/lib/python3.10/dist-packages/rclpy/executors.py", line 351, in _execute_timer
+    await await_or_execute(tmr.callback)
+  File "/opt/ros/humble/local/lib/python3.10/dist-packages/rclpy/executors.py", line 107, in await_or_execute
+    return callback(*args)
+  File "/home/virani/learn_ros_ws/build/ply_to_rviz/ply_to_rviz/ply_to_rviz_node.py", line 59, in publish_point_cloud
+    point_cloud_msg = self.create_pointcloud2(self.points)
+  File "/home/virani/learn_ros_ws/build/ply_to_rviz/ply_to_rviz/ply_to_rviz_node.py", line 32, in create_pointcloud2
+    header.frame_id = 'map'  # Set your frame_id
+AttributeError: 'Time' object has no attribute 'frame_id'
+[ros2run]: Process exited with failure 1
