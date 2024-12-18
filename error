@@ -1,20 +1,13 @@
- ros2 run graphnav_visualization_py graphnav_map_visualizer
+os2 run ply_to_rviz graph_nav_visualizer
 Traceback (most recent call last):
-  File "/home/virani/learn_ros_ws/install/graphnav_visualization_py/lib/graphnav_visualization_py/graphnav_map_visualizer", line 33, in <module>
-    sys.exit(load_entry_point('graphnav-visualization-py', 'console_scripts', 'graphnav_map_visualizer')())
-  File "/home/virani/learn_ros_ws/install/graphnav_visualization_py/lib/graphnav_visualization_py/graphnav_map_visualizer", line 25, in importlib_load_entry_point
-    return next(matches).load()
-  File "/usr/lib/python3.10/importlib/metadata/__init__.py", line 171, in load
-    module = import_module(match.group('module'))
-  File "/usr/lib/python3.10/importlib/__init__.py", line 126, in import_module
-    return _bootstrap._gcd_import(name[level:], package, level)
-  File "<frozen importlib._bootstrap>", line 1050, in _gcd_import
-  File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
-  File "<frozen importlib._bootstrap>", line 1006, in _find_and_load_unlocked
-  File "<frozen importlib._bootstrap>", line 688, in _load_unlocked
-  File "<frozen importlib._bootstrap_external>", line 883, in exec_module
-  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
-  File "/home/virani/learn_ros_ws/build/graphnav_visualization_py/graphnav_visualization_py/graphnav_map_visualizer.py", line 7, in <module>
-    from bosdyn.api.graph_nav import Graph
-ImportError: cannot import name 'Graph' from 'bosdyn.api.graph_nav' (/usr/local/lib/python3.10/dist-packages/bosdyn/api/graph_nav/__init__.py)
+  File "/home/virani/learn_ros_ws/install/ply_to_rviz/lib/ply_to_rviz/graph_nav_visualizer", line 33, in <module>
+    sys.exit(load_entry_point('ply-to-rviz', 'console_scripts', 'graph_nav_visualizer')())
+  File "/home/virani/learn_ros_ws/build/ply_to_rviz/ply_to_rviz/graph_nav_visualizer.py", line 105, in main
+    node = GraphNavVisualizer(map_path)
+  File "/home/virani/learn_ros_ws/build/ply_to_rviz/ply_to_rviz/graph_nav_visualizer.py", line 16, in __init__
+    self.current_graph, self.current_waypoints, self.current_waypoint_snapshots, _, _, _ = self.load_map(map_path)
+  File "/home/virani/learn_ros_ws/build/ply_to_rviz/ply_to_rviz/graph_nav_visualizer.py", line 30, in load_map
+    current_graph.ParseFromString(data)
+TypeError: descriptor 'ParseFromString' for 'google._upb._message.Message' objects doesn't apply to a 'bytes' object
 [ros2run]: Process exited with failure 1
+(venv) venvvirani@virani-HP-Laptop-15s-du1x
